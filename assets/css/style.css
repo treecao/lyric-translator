@@ -36,3 +36,61 @@ button {
   width: 3em;
 
 }
+
+/* body{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  overflow: hidden;
+  position: relative;
+  background: rgb(36, 0, 36);
+  background: linear-gradient(90deg, rgb(36, 0, 36) 0%, rgb(121, 9, 78) 35%, rgb(255, 0, 153) 100%);
+}
+
+.navbar{
+  
+  padding: 25px 20px;
+  width: 100%;
+  height: 30px;
+  background: rgb(36, 0, 36);}
+
+.brand{
+  margin-top: 50%;
+  margin-left: 50%;
+  font-size: 25px;
+  color: #ff0090;
+}
+
+.heading{
+  position: absolute;
+  color: #fff;
+  top: 240px;
+  left: 15%;
+  font-size: 45px;
+  color: #f9f6f7;
+  letter-spacing: 0.06em;
+  font-family: fantasy;
+  text-transform: uppercase;
+}
+.content{
+  position: absolute;
+  top: 320px;
+  left: 15%;
+  color: #ececec;
+  font-size: 25px;
+  letter-spacing: 0.03em;
+}
+
+
+.songSelector{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10%;
+  zoom: 200%;
+  float:right;
+  margin-right:15%;
+  justify-content: space-between;
+  
+} */
