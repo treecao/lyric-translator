@@ -1,43 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Song Lyric Translator</title>
-<!-- css link -->
-    <link rel="stylesheet" href="assets\css\style.css">
-</head>
+  <head>
+    <meta charset="utf-8">
+    <title>DEV Music</title>
+   
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="./assets/js/script.js" defer> </script> 
+  </head>
+  <body>
+    <header class="heading"> <h1>Lyric Translator</h1>
 
-<body>
-    <header>
-        <h1>Song Lyric Translator</h1>
-    </header>
-    
-    <main>
-<!-- insert search options here -->
-     <div class="card" id="">
+    <div class="content">
+      <em>Translate any song <br> with the click of a button.<br></em>
+    </div>
+  </header>
+    <div class="songSelector">
         <form>
-        <label for="fname">Song Title</label><br>
-        <input type="text" id="fname" name="fname"><br>
-        <label for="lname">Artist Name</label><br>
-        <input type="text" id="lname" name="lname">
+        <label for="song">Song</label><br>
+        <input type="text" id="songName" name="songName"><br>
+        <label for="artist">Artist</label><br>
+        <input type="text" id="artistName" name="artistName">
+        </form>
+    </div>
         <br>
-        <div class="search">
-        <button> search</button> 
-        </div>
-        
+        <div class="language" id="container"></div>
+        <select class="translate">
+          <option vale="en-US">English</option>
+          <option value="hi-IN">Hindi</option>
+          <option value="ne-NP">Nepali</option>
+        </select>
 
-
-
-
-
-
-
-     </div> 
-    </main>
-
-    <!-- JS link -->
-    <script> scr="assets\js\script.js"</script>    
-</body>
+        <button id="submit">Translate Lyrics</button> 
+    </div>
+    <div class="lyrics" id="lyricsContainer">
+      <div class="lyricsHeader"></div>
+      <h1> Song Goes Here</h1>
+    </div>
+    
+  </body>
 </html>

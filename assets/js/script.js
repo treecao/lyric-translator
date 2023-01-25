@@ -10,3 +10,21 @@ fetch('https://songmeanings.p.rapidapi.com/?key=c6f85fcc6bmsh14916e6daadafd9p1db
 	.then(response => response.json())
 	.then(response => console.log(response))
 	.catch(err => console.error(err));
+
+
+	const selectTag = document.querySelectorAll("select");
+
+selectTag.forEach(selectTag => {
+	console.log(selectTag);
+});
+
+
+
+
+
+
+let apiKey = 'c6f85fcc6bmsh14916e6daadafd9p1db2b9jsnf63ac98ea77f'
+
+function getApi(){
+	var requestUrl = "google-translate1.p.rapidapi.com"
+}
