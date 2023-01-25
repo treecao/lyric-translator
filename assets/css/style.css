@@ -1,48 +1,15 @@
-body{
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-  overflow: hidden;
-  position: relative;
-  background: rgb(36, 0, 36);
-  background: linear-gradient(90deg, rgb(36, 0, 36) 0%, rgb(121, 9, 78) 35%, rgb(255, 0, 153) 100%);
-}
-
-.brand{
-  margin-top: 50%;
-  margin-left: 50%;
-  font-size: 25px;
-  color: #ff0090;
-}
-
-.heading{
- display: flex;
- justify-content: center;  
- color: #fff;
- font-family: fantasy;
-}
-
-.content{
- display: flex;
- justify-content: center;
- align-items: center;
- margin: 1em;
-}
-
-.songSelector{
+body {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  margin-top: 10%;
-  zoom: 200%;
-  float:right;
-  margin-right:15%;
-  justify-content: space-between;
-  
+  align-items: center;
+  height: 100vh;
+  margin:0;
+  font-family: 'Poppins', sans-serif;
+  background:  rgb(36, 31, 31);
+  background-image: url("https://source.unsplash.com/1600x900/?space") ;
 }
 
-.lyrics {
+.card { 
   background: #000000d0;
   color: white;
   padding: 2em;
@@ -51,5 +18,21 @@ body{
   max-width: 420px;
   margin: 1em;
   height: 700px;
-  
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 
+
+}
+
+button {
+  margin: 1em;
+  border-radius: 30px;
+  border: none;
+  height: 2em;
+  width: 3em;
+
 }
