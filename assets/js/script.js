@@ -1,3 +1,4 @@
+//commenting out full JS file --WIP
 // const options = {
 // 	method: 'GET',
 // 	headers: {
@@ -71,4 +72,20 @@ function getApi() {
 // 		var songName = document.createElement("h1");
 // 		songName.textContent = 
 // 	})
+
+// 	const selectTag = document.querySelectorAll("select");
+
+// selectTag.forEach(selectTag => {
+// 	console.log(selectTag);
+// });
+
+
+
+
+
+
+// let apiKey = 'c6f85fcc6bmsh14916e6daadafd9p1db2b9jsnf63ac98ea77f'
+
+// function getApi(){
+// 	var requestUrl = "google-translate1.p.rapidapi.com"
 // }
