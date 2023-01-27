@@ -37,6 +37,7 @@ button {
 
 }
 
+
 .buttonT {
   margin: 1em;
   border-radius: 50px;
@@ -45,6 +46,11 @@ button {
 }
 
 /*keeping original cody just in case
+
+
+/* keeping old code for reference 
+
+
  body{
   margin: 0;
   padding: 0;
