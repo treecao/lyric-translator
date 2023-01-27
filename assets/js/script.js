@@ -1,4 +1,14 @@
 
+let apiKey = "AIzaSyDvziRZmcbKKXHY2F8MOmbO68tHiSo0fMY"
+
+
+
+
+
+
+
+
+
 // beginning of lyric api integration
 let apiKey = "154536b7fb7d5ecc50beb74e5cb895a8";
 let fetchButton = document.querySelector("#searchBtn")
@@ -27,6 +37,7 @@ fetchButton.addEventListener('click', function(){
 });
 getLyric()
 
+
 //commenting out full JS file --WIP
 // const options = {
 // 	method: 'GET',
@@ -40,14 +51,30 @@ getLyric()
 // 	.then(response => response.json())
 // 	.then(response => console.log(response))
 // 	.catch(err => console.error(err));
+const translateBtn = document.querySelector(".buttonT")
+const selectTag = document.querySelectorAll("select");
+const song = document.querySelector(".description");
 
+selectTag.forEach(selectTag => { 
+    for (const country_code in countries) {
+        //console.log(countries[country_code])
+        let option =`<option value="${country_code}">${countries[country_code]}</option>`
+        selectTag.insertAdjacentHTML("beforeend", option); // adding options tag inside select tag
+    }
+ });
 
-// 	const selectTag = document.querySelectorAll("select");
+function translateText() {
+    var language = document.querySelector('.form-select').value;
+    console.log(language);
 
-// selectTag.forEach(selectTag => {
-// 	console.log(selectTag);
-// });
+    var text = document.querySelector('.description').innerText;
+    console.log(text)
+    // 
+    var url = "https://translation.googleapis.com/language/translate/v2?q=" + text + "&target=" + language + "&key=AIzaSyDvziRZmcbKKXHY2F8MOmbO68tHiSo0fMY"
 
+    fetch(url)
+    .then(res => res.json())
+    .then(data => {
 
 // var myHeaders = new Headers();
 // myHeaders.append("apikey", "154536b7fb7d5ecc50beb74e5cb895a8");
@@ -65,7 +92,12 @@ getLyric()
 //   .catch(error => console.log('error', error));
 
 
+        document.querySelector('.textTranslation').innerText = data.data.translations[0].translatedText
+    })
+}
 
+
+translateBtn.addEventListener("click", translateText);
 
 // let apiKey = 'c6f85fcc6bmsh14916e6daadafd9p1db2b9jsnf63ac98ea77f'
 
