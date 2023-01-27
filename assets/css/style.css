@@ -37,7 +37,20 @@ button {
 
 }
 
+
+.buttonT {
+  margin: 1em;
+  border-radius: 50px;
+  height: 3em;
+  width: 4em;
+}
+
 /*keeping original cody just in case
+
+
+/* keeping old code for reference 
+
+
  body{
   margin: 0;
   padding: 0;
