@@ -7,6 +7,7 @@ body {
   font-family: 'Poppins', sans-serif;
   background:  rgb(36, 31, 31);
   background-image: url("https://source.unsplash.com/1600x900/?space") ;
+  background-size: cover;
 }
 
 .card { 
@@ -42,6 +43,13 @@ button {
   width: 4em;
 }
 
+
+@media screen and (max-width: 768px) {
+  .card {
+    flex-direction: column;
+    float: left;
+  }}
+
 /* text wrap & scrolling */
 .description p{
   white-space: pre-wrap;
@@ -54,3 +62,4 @@ button {
   overflow: scroll;
   /* height: 400px; */
 }
+
