@@ -1,10 +1,12 @@
-// // genius api keys --- 
-// // client secret - 6TN71dOvz3RALlGNElYVxN8fcWs9EugrZmw6BlgP7yBPFA9hSGhH2DEAKuAFWRKFVUXlG_872zKAYznnWDbr6Q
-// // client id - SqLiLKN6DJazosWp9rDJGFMgnI8vdP4Gv_NuyII3yv71Uys3BHPSjbkNve9iy0Bb
-
 // beginning of lyric api integration
 const song = document.querySelector(".description");
-const lyrics = document.createElement("p")
+const lyrics = document.createElement("p");
+
+// document.getElementById("history").split(": "[0]),
+function init() {
+    document.getElementById("history").innerHTML =  "Last Searched: " + localStorage.getItem("Last Searched");
+}
+init();
 
 function songLyric() {
   var songName = document.getElementById("songTitle").value;
@@ -21,15 +23,26 @@ function songLyric() {
     console.log(songLyrics.split("*******")[0])
     lyrics.textContent = songLyrics.split("*******")[0]
     song.appendChild(lyrics);
-    console.log(result.message.body.lyrics.lyrics_body)
+    console.log(result)
   })
   .catch(error => console.log('error', error));
 
-  window.localStorage.setItem(songName, artistName)
+
+  // window.localStorage.setItem("artistName", artistName);
+
+
+
+  let historyDisplay = document.getElementById("testiing");
+  let capitalArtist = artistName.charAt(0).toUpperCase() + artistName.slice(1);
+  let capitalSong = songName.charAt(0).toUpperCase() + songName.slice(1);
+  historyDisplay.innerHTML = capitalArtist + ' - ' + capitalSong;
+  window.localStorage.setItem("Last Searched", capitalArtist + " - " + capitalSong);
 };
 
-$("#search-song").on("click", songLyric)
-  
+
+
+
+$("#search-song").on("click", songLyric);
 
 // translator api code begins here
 let fetchButton = document.querySelector("#searchBtn")
