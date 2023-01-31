@@ -28,6 +28,7 @@ function songLyric() {
 };
 
 $("#search-song").on("click", songLyric)
+  
 
 
 // translator api code begins here
