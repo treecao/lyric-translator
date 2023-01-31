@@ -43,7 +43,6 @@ button {
   width: 4em;
 }
 
-
 @media screen and (max-width: 768px) {
   .card {
     flex-direction: column;
@@ -53,13 +52,13 @@ button {
 /* text wrap & scrolling */
 .description p{
   white-space: pre-wrap;
-  overflow: scroll;
+  overflow-y: hidden;
+  overflow-x: hidden;
   height: 400px;
 }
 
-#andrew p{
+#tcard p{
   white-space: pre-wrap;
-  overflow: scroll;
-  /* height: 400px; */
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
-
