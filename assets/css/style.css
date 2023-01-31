@@ -25,7 +25,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-
+  margin: 0 ;
 }
 
 button {
@@ -34,9 +34,7 @@ button {
   border: none;
   height: 2em;
   width: 3em;
-
 }
-
 
 .buttonT {
   margin: 1em;
@@ -45,8 +43,23 @@ button {
   width: 4em;
 }
 
+
 @media screen and (max-width: 768px) {
   .card {
     flex-direction: column;
     float: left;
   }}
+
+/* text wrap & scrolling */
+.description p{
+  white-space: pre-wrap;
+  overflow: scroll;
+  height: 400px;
+}
+
+#andrew p{
+  white-space: pre-wrap;
+  overflow: scroll;
+  /* height: 400px; */
+}
+

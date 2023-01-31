@@ -23,6 +23,7 @@ function songLyric() {
   .then((result) => {
     // filtering to the lyrics_body portion of the data
     let songLyrics = result.message.body.lyrics.lyrics_body
+    console.log(typeof songLyrics)
     console.log(songLyrics.split("*******")[0])
     // splitting un-needed text from lyrics
     lyrics.textContent = songLyrics.split("*******")[0]
@@ -53,28 +54,68 @@ let apiKey = "AIzaSyDvziRZmcbKKXHY2F8MOmbO68tHiSo0fMY"
 const translateBtn = document.querySelector(".buttonT")
 const selectTag = document.querySelectorAll("select");
 
+//sort country codes alphabetically
+let sortable = [];
+for (var country_code in countries) {
+    sortable.push([country_code, countries[country_code]]);
+}
+
+sortable.sort(function(a, b) {
+    return a[1].localeCompare(b[1]);
+});
+console.log(JSON.stringify(sortable));
+
+
+// selectTag.forEach(selectTag => { 
+//     for (const country_code in countries) {
+//         //console.log(countries[country_code])
+//         let option =`<option value="${country_code}">${countries[country_code]}</option>`
+//         selectTag.insertAdjacentHTML("beforeend", option); // adding options tag inside select tag
+//     }
+//  });
+
 selectTag.forEach(selectTag => { 
-    for (const country_code in countries) {
-        //console.log(countries[country_code])
-        let option =`<option value="${country_code}">${countries[country_code]}</option>`
-        selectTag.insertAdjacentHTML("beforeend", option); // adding options tag inside select tag
-    }
- });
+  for (var i=0; i < sortable.length; i++) {
+      //console.log(countries[country_code])
+      let option =`<option value="${sortable[i][0]}">${sortable[i][1]}</option>`
+      selectTag.insertAdjacentHTML("beforeend", option); // adding options tag inside select tag
+  }
+});
 
 function translateText() {
     var language = document.querySelector('.form-select').value;
     console.log(language);
 
     var text = document.querySelector('.description').innerText;
-    console.log(text)
+    console.log("LOOK HERE", text)
+    //filter out empty space 
+    text = text.split("\n").filter(s => s !== ""); 
+    console.log("LOOK HERE", text)
     
-    var url = "https://translation.googleapis.com/language/translate/v2?q=" + text + "&target=" + language + "&key=AIzaSyDvziRZmcbKKXHY2F8MOmbO68tHiSo0fMY"
+    var url = "https://translation.googleapis.com/language/translate/v2?" + "format=text&target=" + language + "&key=AIzaSyDvziRZmcbKKXHY2F8MOmbO68tHiSo0fMY"
 
-    fetch(url)
+    fetch(url, {
+      body:JSON.stringify({
+        q:text}), 
+      method:"post"
+    })
     .then(res => res.json())
     .then(data => {
-        document.querySelector('.textTranslation').innerText = data.data.translations[0].translatedText
-    })
+      console.log(data);
+        var translatedText = data.data.translations.map(e => e.translatedText);
+        // debugger;
+        // var decodedText = decodeURI(decodeHtml(translatedText));
+        // console.log("the decoded text is", decodedText);
+        // var translatedLines = JSON.parse(decodedText);
+        
+        document.querySelector('.textTranslation').innerText = translatedText.join("\n");
+      });
+      function decodeHtml(html) {
+        var txt = document.createElement("textarea");
+        txt.innerHTML = html;
+        return txt.value;
+    }
 }
+
 
 translateBtn.addEventListener("click", translateText);
