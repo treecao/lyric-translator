@@ -62,3 +62,7 @@ button {
   overflow-y: hidden;
   overflow-x: hidden;
 }
+
+#current-song {
+  font-size: 37px;
+}
