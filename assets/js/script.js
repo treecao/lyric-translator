@@ -2,11 +2,10 @@
 const song = document.querySelector(".description");
 const lyrics = document.createElement("p");
 
-// document.getElementById("history").split(": "[0]),
-function init() {
+function displayLastSong() {
     document.getElementById("history").innerHTML =  "Last Searched: " + localStorage.getItem("Last Searched");
 }
-init();
+displayLastSong();
 
 function songLyric() {
   var songName = document.getElementById("songTitle").value;
@@ -27,20 +26,12 @@ function songLyric() {
   })
   .catch(error => console.log('error', error));
 
-
-  // window.localStorage.setItem("artistName", artistName);
-
-
-
-  let historyDisplay = document.getElementById("testiing");
+  let historyDisplay = document.getElementById("current-song");
   let capitalArtist = artistName.charAt(0).toUpperCase() + artistName.slice(1);
   let capitalSong = songName.charAt(0).toUpperCase() + songName.slice(1);
   historyDisplay.innerHTML = capitalArtist + ' - ' + capitalSong;
   window.localStorage.setItem("Last Searched", capitalArtist + " - " + capitalSong);
 };
-
-
-
 
 $("#search-song").on("click", songLyric);
 
