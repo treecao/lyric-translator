@@ -1,26 +1,38 @@
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin:0;
-  font-family: 'Poppins', sans-serif;
   background:  rgb(36, 31, 31);
   background-image: url("https://source.unsplash.com/1600x900/?space") ;
   background-size: cover;
 }
 
-.card { 
-  background: #000000d0;
-  color: white;
-  padding: 2em;
-  border-radius: 30px;
-  width: 100%;
-  max-width: 420px;
-  margin: 1em;
-  height: 700px;
+header { 
+  background-color: teal;
+  color: white; 
+  max-width: 3000px;
+  margin-left: relative;
+  margin-right: relative;
+  color:black;
+  opacity: .7;
 }
 
+.card { 
+  padding-top: 400px;
+  width: 100%;
+  max-width: 420px;
+  margin: 35px;
+  height: 800px;
+  opacity: .65;
+}
+
+footer { 
+  padding-bottom:0%;
+  max-width: 3000px;
+  margin-left: relative;
+  margin-right: relative;
+  opacity: .7;
+  font-size: 30px;
+}
+
+/* replaced these using Bulma CSS in HTML
 .search {
   display: flex;
   align-items: center;
@@ -49,20 +61,21 @@ button {
     float: left;
   }}
 
+
 /* text wrap & scrolling */
 .description p{
-  white-space: pre-wrap;
-  overflow-y: hidden;
-  overflow-x: hidden;
-  height: 400px;
+  white-space: pre-wrap !important;
+  overflow-y: hidden !important;
+  overflow-x: hidden !important;
+  height: 400px !important;
 }
 
 #tcard p{
-  white-space: pre-wrap;
-  overflow-y: hidden;
-  overflow-x: hidden;
+  white-space: pre-wrap !important;
+  overflow-y: hidden !important;
+  overflow-x: hidden !important;
 }
 
-#current-song {
+/* #current-song {
   font-size: 37px;
-}
+} */   
