@@ -2,11 +2,14 @@
 const song = document.querySelector(".description");
 const lyrics = document.createElement("p");
 const historyDisplay = document.getElementById("current-song");
+
 // pulling data from local storage and displaying it on the page
-function displayLastSong() {
-    document.getElementById("history").innerHTML =  "Last Searched: " + localStorage.getItem("Last Searched");
+$('#search-song').click(function(e){ 
+  function displayLastSong() {
+    document.getElementById("history").innerHTML =  "Previously Searched: " + localStorage.getItem("Last Searched");
 }
 displayLastSong();
+});
 
 // main function for api functionality 
 function songLyric() {
