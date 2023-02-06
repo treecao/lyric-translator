@@ -1,66 +1,39 @@
 body {
-  background:  rgb(36, 31, 31);
-  background-image: url("https://source.unsplash.com/1600x900/?space") ;
+  background:rgb(36, 31, 31);
+  background-image: url("https://source.unsplash.com/1600x900/?nature");
   background-size: cover;
 }
 
-header { 
-  background-color: teal;
-  color: white; 
+.title {
+  color: white !important; 
+}
+
+.subtitle {
+  color: black;
+}
+
+.header { 
+  background-color: rgb(128, 128, 128, .5) !important;
   max-width: 3000px;
   margin-left: relative;
   margin-right: relative;
-  color:black;
-  opacity: .7;
 }
 
 .card { 
-  padding-top: 400px;
+  background-color: rgba(128, 128, 128, .4)!important;
   width: 100%;
-  max-width: 420px;
   margin: 35px;
-  height: 800px;
-  opacity: .65;
+  height: 675px;
 }
 
-footer { 
-  padding-bottom:0%;
-  max-width: 3000px;
-  margin-left: relative;
-  margin-right: relative;
-  opacity: .7;
+.footer { 
+  background-color: rgba(128, 128, 128, .5)!important;
+  /* padding-bottom:0%; */
+  /* max-width: 3000px; */
+  /* margin-left: relative;
+  margin-right: relative; */
   font-size: 30px;
 }
-
-/* replaced these using Bulma CSS in HTML
-.search {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 ;
-}
-
-button {
-  margin: 1em;
-  border-radius: 30px;
-  border: none;
-  height: 2em;
-  width: 3em;
-}
-
-.buttonT {
-  margin: 1em;
-  border-radius: 50px;
-  height: 3em;
-  width: 4em;
-}
-
-@media screen and (max-width: 768px) {
-  .card {
-    flex-direction: column;
-    float: left;
-  }}
-
 
 /* text wrap & scrolling */
 .description p{

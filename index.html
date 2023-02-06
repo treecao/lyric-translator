@@ -1,45 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Language Shuffle</title>
-  <link rel="icon" href="assets\icons\teal music.png"/>
-  <link rel="stylesheet" href="./assets/css/style.css">
-  <script src="./assets/js/script.js" defer></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,600;1,700;1,800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Language Shuffle</title>
+    <link rel="icon" href="assets\icons\teal music.png" />
 
-<body>
-  <header class="has-text-centered">
-    <h1 class="title is-1"><strong>Language Shuffler</strong></h1>
-    <h2 class="subtitle">music lyrics your way</h2>
-  </header>
+    <script src="./assets/js/script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,600;1,700;1,800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
 
-  <!-- Wrap both cards -->
-  <div class="columns is-variable is-1-mobile is-0-tablet is-3-desktop is-8-widescreen is-2-fullhd has-text-centered py-6 px-6 is-family-sans-serif"> 
-  <!-- Lyric Card -->
-    <div class="card block column">
-      <h2 class="header-2 block title has-text-weight-bold">Lyric Locator</h2>
-      <div class="search">
-        <input class="songTitle input is-info block has-text-weight-bold" id="songTitle" placeholder="Song Name">
-        <input type="text" class="artist-name input is-info block has-text-weight-bold" id="artist-name" placeholder="Artist Name">
-        <h3 class="city block" id="history"></h3>
-        <button id="search-song" class="button is-primary is-outlined"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg"><path d="M909.6 854.5L649.9 594.8C690.2 542.7 712 479 712 412c0-80.2-31.3-155.4-87.9-212.1-56.6-56.7-132-87.9-212.1-87.9s-155.5 31.3-212.1 87.9C143.2 256.5 112 331.8 112 412c0 80.1 31.3 155.5 87.9 212.1C256.5 680.8 331.8 712 412 712c67 0 130.6-21.8 182.7-62l259.7 259.6a8.2 8.2 0 0 0 11.6 0l43.6-43.5a8.2 8.2 0 0 0 0-11.6zM570.4 570.4C528 612.7 471.8 636 412 636s-116-23.3-158.4-65.6C211.3 528 188 471.8 188 412s23.3-116.1 65.6-158.4C296 211.3 352.2 188 412 188s116.1 23.2 158.4 65.6S636 352.2 636 412s-23.3 116.1-65.6 158.4z"></path></svg></button>
+  <body>
+    <header class="has-text-white has-background-info has-text-centered header">
+      <h1 class="title is-1"><strong>Language Shuffler</strong></h1>
+      <h2 class="subtitle">music lyrics your way</h2>
+    </header>
+
+    <!-- Wrap both cards -->
+    <div
+      class="columns is-variable is-1-mobile is-0-tablet is-3-desktop is-8-widescreen is-2-fullhd has-text-centered py-6 px-6 is-family-sans-serif"
+    >
+      <!-- Lyric Card -->
+      <div class="has-text-white has-background-info card block column">
+        <h2 class="header-2 block title has-text-weight-bold">Lyric Locator</h2>
+        <div class="search">
+          <input
+            class="songTitle input is-info block has-text-weight-bold"
+            id="songTitle"
+            placeholder="Song Name"
+          />
+          <input
+            type="text"
+            class="artist-name input is-info block has-text-weight-bold"
+            id="artist-name"
+            placeholder="Artist Name"
+          />
+          <div>
+            <h3 class="city block" style="display: hidden" id="history"></h3>
+            <div class="history"></div>
+            <button class="clear-history">Clear Search History</button>
+          </div>
+          <br />
+          <button id="search-song" class="button is-primary is-outlined">
+            <svg
+              stroke="currentColor"
+              fill="currentColor"
+              stroke-width="0"
+              viewBox="0 0 1024 1024"
+              height="1.5em"
+              width="1.5em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M909.6 854.5L649.9 594.8C690.2 542.7 712 479 712 412c0-80.2-31.3-155.4-87.9-212.1-56.6-56.7-132-87.9-212.1-87.9s-155.5 31.3-212.1 87.9C143.2 256.5 112 331.8 112 412c0 80.1 31.3 155.5 87.9 212.1C256.5 680.8 331.8 712 412 712c67 0 130.6-21.8 182.7-62l259.7 259.6a8.2 8.2 0 0 0 11.6 0l43.6-43.5a8.2 8.2 0 0 0 0-11.6zM570.4 570.4C528 612.7 471.8 636 412 636s-116-23.3-158.4-65.6C211.3 528 188 471.8 188 412s23.3-116.1 65.6-158.4C296 211.3 352.2 188 412 188s116.1 23.2 158.4 65.6S636 352.2 636 412s-23.3 116.1-65.6 158.4z"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <h2 id="current-song" class="title has-text-weight-bold"></h2>
+        <h2 class="city"></h2>
+        <!-- <img src="" alt="" class="icon"> -->
+        <div class="description"></div>
       </div>
-      <h2 id="current-song" class="title has-text-weight-bold"></h2>
-      <h2 class="city"></h2>
-      <!-- <img src="" alt="" class="icon"> -->
-      <div class="description"></div>
-    </div>
 
       <!-- Traslation Card -->
-      <div class="card block column" id="tcard">
-        <h2 class="header-2 block title has-text-weight-bold">Lyric Translator</h2>
+      <div
+        class="has-text-white has-background-info card block column"
+        id="tcard"
+      >
+        <h2 class="header-2 block title has-text-weight-bold">
+          Lyric Translator
+        </h2>
         <!-- Language dropdown -->
         <div class="translation block" id="container">
           <div class="select is-large">
@@ -49,19 +91,28 @@
           </div>
         </div>
         <!-- Translate Button -->
-        <button class="buttonT button is-primary is-outlined">Translate</button>
+        <button class="buttonT button is-primary is-outlined">
+          <strong>Translate</strong>
+        </button>
         <h2 id="translated-title" class="title has-text-weight-bold"></h2>
         <p class="textTranslation"></p>
       </div>
       <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
       <script src="./assets/js/countries.js"></script>
-    </div> 
-    
-  <footer class="footer">
-    <div class="content has-text-centered">
-      <p><strong>Language Shuffler by </strong><a href="https://github.com/AhtziryCavazos"> Abigail,</a><a href="https://github.com/xAsdfaf"> George,</a><a href="https://github.com/romanjamess"> Roman,</a><a href="https://github.com/Tieranyr"> Tierany,</a><a href="https://github.com/treecao"> and Tree</a>.</p>
     </div>
-  </footer>
-    
-</body>
+
+    <footer class="has-text-white has-background-info footer">
+      <div class="content has-text-centered">
+        <p>
+          <strong>Language Shuffler by </strong
+          ><a href="https://github.com/AhtziryCavazos" target="_blank">
+            Abigail,</a
+          ><a href="https://github.com/xAsdfaf" target="_blank"> George,</a
+          ><a href="https://github.com/romanjamess" target="_blank"> Roman,</a
+          ><a href="https://github.com/Tieranyr" target="_blank"> Tierany,</a
+          ><a href="https://github.com/treecao" target="_blank"> and Tree</a>.
+        </p>
+      </div>
+    </footer>
+  </body>
 </html>
