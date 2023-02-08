@@ -9,10 +9,14 @@ let historyDisplay = document.getElementById("history");
 // pulling data from local storage and displaying it on the page
 function displayLastSong() {
   let duplicateExists = false;
-  for(let i=0; i < previouslySearched.length; i++){
+  //clear old list before displaying new updated history list
+  historyDisplay.innerHTML = "";
+  for (let i = 0; i < previouslySearched.length; i++) {
     let songHistory = document.createElement("button");
     songHistory.textContent =
-      previouslySearched[i].capitalSong + " - " + previouslySearched[i].capitalArtist;
+      previouslySearched[i].capitalSong +
+      " - " +
+      previouslySearched[i].capitalArtist;
     songHistory.addEventListener("click", function () {
       songLyric(
         previouslySearched[i].capitalSong,
@@ -57,15 +61,24 @@ function songLyric(songName, artistName) {
   // displaying the currently searched song
   currentSongDisplay.innerHTML = capitalArtist + " - " + capitalSong;
   // setting the user input into local storage
-  previouslySearched.push({ capitalArtist, capitalSong });
-  window.localStorage.setItem(
-    "Last Searched",
-    JSON.stringify(previouslySearched)
-  );
+  let duplicate = previouslySearched.find(function (searchParameters) {
+    return (
+      searchParameters.capitalArtist === capitalArtist &&
+      searchParameters.capitalSong === capitalSong
+    );
+  });
+  if (!duplicate) {
+    previouslySearched.push({ capitalArtist, capitalSong });
+    window.localStorage.setItem(
+      "Last Searched",
+      JSON.stringify(previouslySearched)
+    );
+  }
 }
 //LYRIC API END
 
-$(".clear-history").on("click", function(){
+// clear search history button functionality
+$(".clear-history").on("click", function () {
   localStorage.clear();
   location.reload();
   console.log("history cleared & page refreshed");
@@ -76,6 +89,10 @@ $("#search-song").on("click", function () {
   // value given by the input boxes on the page
   var songName = document.getElementById("songTitle").value;
   var artistName = document.getElementById("artist-name").value;
+  // does not append & data if input fields are empty
+  if (!songName || !artistName) {
+    return;
+  }
   songLyric(songName, artistName);
   displayLastSong();
 });

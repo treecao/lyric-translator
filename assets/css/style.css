@@ -1,5 +1,6 @@
 body {
   background:rgb(36, 31, 31);
+  /* to ensure the image will reload each time > Network > Disable Cache */
   background-image: url("https://source.unsplash.com/1600x900/?nature");
   background-size: cover;
 }
@@ -22,33 +23,30 @@ body {
 .card { 
   background-color: rgba(128, 128, 128, .4)!important;
   width: 100%;
-  margin: 35px;
-  height: 675px;
+  /* margin: 35px; */
+  height: relative;
+}
+
+.columns.is-variable{
+  column-gap: var(--columnGap);
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .footer { 
   background-color: rgba(128, 128, 128, .5)!important;
-  /* padding-bottom:0%; */
+  padding-bottom: 3rem;
   /* max-width: 3000px; */
   /* margin-left: relative;
   margin-right: relative; */
   font-size: 30px;
+  color: white;
 }
 
 /* text wrap & scrolling */
-.description p{
-  white-space: pre-wrap !important;
-  overflow-y: hidden !important;
-  overflow-x: hidden !important;
+.description{
+  white-space: pre-wrap;
+  overflow-y: scroll;
+  overflow-x: hidden;
   height: 400px !important;
 }
-
-#tcard p{
-  white-space: pre-wrap !important;
-  overflow-y: hidden !important;
-  overflow-x: hidden !important;
-}
-
-/* #current-song {
-  font-size: 37px;
-} */   
